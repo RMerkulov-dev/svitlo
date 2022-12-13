@@ -21,7 +21,7 @@
   font-family: Lato, serif;
 }
 .add_btn{
-  margin-top: 10px;
+
   width: 40px;
   display: flex;
   align-items: center;
@@ -35,4 +35,35 @@
 .add_btn>img{
   width: 40px;
 }
+.bateries_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.bateries_wrapper>img{
+  width: 50px;
+}
+.modal_input {
+  width: 170px;
 
+  border-radius: 3px;
+  border: none;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.modal_content>button{
+  width: 70px;
+  border: none;
+  background:burlywood ;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.add_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

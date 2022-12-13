@@ -2,7 +2,7 @@ import s from "./Modal.module.scss";
 import Battery from "../../img/car-battery.png";
 import { useEffect, useState } from "react";
 
-const Modal = ({ setOpenModal, setAdd, capacityValue }) => {
+const Modal = ({ setOpenModal, setAdd }) => {
   const [capacity, setCapacity] = useState("");
 
   const handlerInput = (e) => {
@@ -17,6 +17,11 @@ const Modal = ({ setOpenModal, setAdd, capacityValue }) => {
     setOpenModal(false);
     setAdd(true);
   };
+
+  useEffect(() => {
+    localStorage.setItem("batteries", JSON.stringify(capacity));
+  });
+
   useEffect(() => {
     const keyDownHandler = (e) => {
       if (e.key === "Enter") {
