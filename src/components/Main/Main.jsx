@@ -83,19 +83,19 @@ const Main = () => {
       <ul className={s.devices}>
         <li>
           <img src={Tv} alt="tv" width="30" />
-          <span>{totalUse.tv} hours</span>
+          <span>{totalUse.tv} ~ hours</span>
         </li>
         <li>
           <img src={Light} alt="tv" width="30" />
-          <span>{totalUse.light} hours</span>
+          <span>{totalUse.light} ~ hours</span>
         </li>
         <li>
           <img src={Laptop} alt="tv" width="30" />
-          <span>{totalUse.laptop} hours</span>
+          <span>{totalUse.laptop} ~ hours</span>
         </li>
         <li className={s.update}>
           <img src={Wifi} alt="tv" width="30" />
-          <span>{totalUse.wifi} hours</span>
+          <span>{totalUse.wifi} ~ hours</span>
         </li>
       </ul>
     </div>
