@@ -7,6 +7,25 @@ import { useEffect, useState } from "react";
 const Main = () => {
   const [capacity, setCapacity] = useState("");
   const [item, setItem] = useState("");
+  const [totalPower, setTotalPower] = useState("");
+  const [totalUse, setTotalUse] = useState({
+    tv: "",
+    light: "",
+    laptop: "",
+    wifi: "",
+  });
+  console.log(totalPower);
+  console.log(totalUse);
+
+  // const totalSpendPower = () => {
+  //   setTotalUse((totalUse) => ({
+  //     ...totalUse,
+  //     tv: (totalPower / 50).toFixed(1),
+  //     light: (totalPower / 60).toFixed(1),
+  //     laptop: (totalPower / 50).toFixed(1),
+  //     wifi: (totalPower / 3.5).toFixed(1),
+  //   }));
+  // };
 
   useEffect(() => {
     const keyDownHandler = (e) => {
@@ -21,12 +40,23 @@ const Main = () => {
       document.removeEventListener("keydown", keyDownHandler);
     };
   });
+  useEffect(() => {});
+
   const handlerSubmit = (e) => {
     e.preventDefault();
     const capacityValue = capacity;
+    const power = capacity * 12 - capacity * 12 * 0.15;
     setItem(capacityValue);
     setCapacity("");
+    setTotalPower(power);
+    setTotalUse(() => ({
+      tv: (totalPower / 50).toFixed(1),
+      light: (totalPower / 60).toFixed(1),
+      laptop: (totalPower / 50).toFixed(1),
+      wifi: (totalPower / 3.5).toFixed(1),
+    }));
   };
+
   const handlerInput = (e) => {
     setCapacity(e.target.value);
   };
@@ -51,6 +81,10 @@ const Main = () => {
       <div className={s.bateries_wrapper}>
         <img src={Battery} alt="batteries" />
         <span>{item} Ah</span>
+      </div>
+      <div>
+        <h2>Total power in Watt</h2>
+        <span>{totalPower}</span>
       </div>
     </div>
   );
