@@ -77,8 +77,8 @@ const Main = () => {
         <span>{item} Ah</span>
       </div>
       <div className={s.totpower_wrapper}>
-        <h2 className={s.totpower_text}>Total power in Watt</h2>
-        <span className={s.totpower_value}>{totalPower} v</span>
+        <h2 className={s.totpower_text}>Total power</h2>
+        <span className={s.totpower_value}>{totalPower} W</span>
       </div>
       <ul className={s.devices}>
         <li>
