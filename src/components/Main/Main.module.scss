@@ -1,5 +1,5 @@
 .main_wrapper{
-  padding: 10px 20px;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -16,12 +16,14 @@
 .main_title{
   margin: 0;
   color: burlywood;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   font-family: Lato, serif;
 }
+.add_wrapper{
+  margin-top: 30px;
+}
 .add_btn{
-
   width: 40px;
   display: flex;
   align-items: center;
@@ -40,14 +42,22 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 100px;
 }
 .bateries_wrapper>img{
   width: 50px;
 }
+.bateries_wrapper>span{
+  font-size: 20px;
+  font-weight: bold;
+  background: white;
+  color: #643416;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
 .modal_input {
   width: 170px;
-
   border-radius: 3px;
   border: none;
   padding: 5px;
@@ -67,3 +77,58 @@
   justify-content: center;
   gap: 10px;
 }
+.totpower_text{
+  font-weight: bold;
+  font-size: 30px;
+  color: #262625;
+  margin: 0;
+}
+.totpower_value{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #643416;
+  background-image: url("../../img/empty-battery.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+  z-index: 100;
+
+}
+.totpower_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.devices{
+  margin-top: 100px;
+  padding: 0;
+
+}
+.devices>li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  gap: 30px;
+  width: 200px;
+}
+.devices>img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.devices>li>span{
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+

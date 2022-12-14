@@ -1,7 +1,10 @@
 import s from "./Main.module.scss";
 import Add from "../../img/add-btn.png";
 import Battery from "../../img/car-battery.png";
-// import Modal from "../Modal/Modal";
+import Tv from "../../img/television.png";
+import Light from "../../img/light-bulb.png";
+import Laptop from "../../img/laptop-screen.png";
+import Wifi from "../../img/wifi.png";
 import { useEffect, useState } from "react";
 
 const Main = () => {
@@ -17,16 +20,6 @@ const Main = () => {
   console.log(totalPower);
   console.log(totalUse);
 
-  // const totalSpendPower = () => {
-  //   setTotalUse((totalUse) => ({
-  //     ...totalUse,
-  //     tv: (totalPower / 50).toFixed(1),
-  //     light: (totalPower / 60).toFixed(1),
-  //     laptop: (totalPower / 50).toFixed(1),
-  //     wifi: (totalPower / 3.5).toFixed(1),
-  //   }));
-  // };
-
   useEffect(() => {
     const keyDownHandler = (e) => {
       if (e.key === "Enter") {
@@ -40,7 +33,14 @@ const Main = () => {
       document.removeEventListener("keydown", keyDownHandler);
     };
   });
-  useEffect(() => {});
+  useEffect(() => {
+    setTotalUse(() => ({
+      tv: (totalPower / 50).toFixed(1),
+      light: (totalPower / 60).toFixed(1),
+      laptop: (totalPower / 50).toFixed(1),
+      wifi: (totalPower / 3.5).toFixed(1),
+    }));
+  }, [totalPower]);
 
   const handlerSubmit = (e) => {
     e.preventDefault();
@@ -49,12 +49,6 @@ const Main = () => {
     setItem(capacityValue);
     setCapacity("");
     setTotalPower(power);
-    setTotalUse(() => ({
-      tv: (totalPower / 50).toFixed(1),
-      light: (totalPower / 60).toFixed(1),
-      laptop: (totalPower / 50).toFixed(1),
-      wifi: (totalPower / 3.5).toFixed(1),
-    }));
   };
 
   const handlerInput = (e) => {
@@ -82,12 +76,37 @@ const Main = () => {
         <img src={Battery} alt="batteries" />
         <span>{item} Ah</span>
       </div>
-      <div>
-        <h2>Total power in Watt</h2>
-        <span>{totalPower}</span>
+      <div className={s.totpower_wrapper}>
+        <h2 className={s.totpower_text}>Total power in Watt</h2>
+        <span className={s.totpower_value}>{totalPower} v</span>
       </div>
+      <ul className={s.devices}>
+        <li>
+          <img src={Tv} alt="tv" width="30" />
+          <span>{totalUse.tv} hours</span>
+        </li>
+        <li>
+          <img src={Light} alt="tv" width="30" />
+          <span>{totalUse.light} hours</span>
+        </li>
+        <li>
+          <img src={Laptop} alt="tv" width="30" />
+          <span>{totalUse.laptop} hours</span>
+        </li>
+        <li className={s.update}>
+          <img src={Wifi} alt="tv" width="30" />
+          <span>{totalUse.wifi} hours</span>
+        </li>
+      </ul>
     </div>
   );
 };
 
 export default Main;
+
+// const [totalUse, setTotalUse] = useState({
+//   tv: "",
+//   light: "",
+//   laptop: "",
+//   wifi: "",
+// });
